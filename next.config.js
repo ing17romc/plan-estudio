@@ -15,8 +15,6 @@ module.exports = {
 			DATABASE: '',
 			USER: '',
 			PASSWORD: ''
-		},
-		BASE_URL: 'http://localhost:3000',
-		BACKEND: 'mysql'
+		}
 	}
 }
