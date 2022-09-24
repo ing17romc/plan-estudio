@@ -1,21 +1,23 @@
-import { CONFIG } from '../config'
+import { CONFIG } from 'config'
+import { CONTENT } from 'content'
 
-const { CARRERAS, MATERIAS, SEMESTRES } = CONFIG.ROUTER
+const { CARRERAS, MATERIAS, SEMESTRES, START_APP, EXIT_APP } = CONFIG.ROUTER
+const { GENERIC } = CONTENT
 
-export const TABLE_HEADERS = ['Id', 'Nombre', 'Estado']
+export const TABLE_HEADERS = [GENERIC.ID, GENERIC.NAME, GENERIC.STATUS.NAME]
 
 export const STATUS = [
-	{ key: '0', value: 'Inactivo' },
-	{ key: '1', value: 'Activo' }
+	{ key: '0', value: GENERIC.STATUS.INACTIVE },
+	{ key: '1', value: GENERIC.STATUS.ACTIVE }
 ]
 
-export const LEFT_OPTIONS = [{ path: '/', name: 'Menu' }]
-export const RIGHT_OPTIONS = []
+export const LEFT_OPTIONS = [{ path: START_APP, name: GENERIC.MENU }]
+export const RIGHT_OPTIONS = [{ path: EXIT_APP, name: GENERIC.EXIT }]
 
 export const MENU_OPTIONS = [
-	{ path: CARRERAS, name: 'Carreras', icon: 'list' },
-	{ path: MATERIAS, name: 'Materias', icon: 'list' },
-	{ path: SEMESTRES, name: 'Semestres', icon: 'list' }
+	{ path: CARRERAS, name: CONTENT.CARRERAS.TITLE, icon: 'list' },
+	{ path: MATERIAS, name: CONTENT.MATERIAS.TITLE, icon: 'list' },
+	{ path: SEMESTRES, name: CONTENT.SEMESTRES.TITLE, icon: 'list' }
 ]
 
 export const BASE_URL = process.env.BASE_URL

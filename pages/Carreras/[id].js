@@ -3,6 +3,11 @@ import GenericEdit from 'components/GenericEdit'
 import { CONTENT } from 'content'
 import { CONFIG } from 'config'
 import Error from 'next/error'
+import {
+	AuthAction,
+	withAuthUser,
+	withAuthUserTokenSSR
+} from 'next-firebase-auth'
 
 const { TITLE_EDIT } = CONTENT.CARRERAS
 const { CARRERAS: API } = CONFIG.API
@@ -25,7 +30,9 @@ const edit = ({ id = 0, nombre = '', estado = 1, error }) => {
 	)
 }
 
-export async function getServerSideProps (props) {
+export const getServerSideProps = withAuthUserTokenSSR({
+	whenUnauthed: AuthAction.REDIRECT_TO_LOGIN
+})(async (props) => {
 	try {
 		const response = await fetch(`${API}/${props.params.id}`)
 
@@ -48,6 +55,8 @@ export async function getServerSideProps (props) {
 		console.log(error)
 		return { props: {} }
 	}
-}
+})
 
-export default edit
+export default withAuthUser({
+	whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN
+})(edit)

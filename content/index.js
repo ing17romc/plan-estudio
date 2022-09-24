@@ -17,9 +17,13 @@ export const CONTENT = {
 	},
 	GENERIC: {
 		STATUS: {
+			NAME: 'Estado',
 			ACTIVE: 'Activo',
 			INACTIVE: 'Inactivo'
 		},
-		MENU: 'Menu'
+		MENU: 'Menu',
+		EXIT: 'Salir',
+		ID: 'Id',
+		NAME: 'Nombre'
 	}
 }

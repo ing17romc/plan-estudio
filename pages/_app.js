@@ -2,8 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import { UI } from 'edt-lib'
 import Router from 'next/router'
+import initAuth from '../initAuth'
 
 import 'edt-lib/index.scss'
+
+initAuth()
 
 function MyApp ({ Component, pageProps }) {
 	const [loading, setLoading] = React.useState(false)
@@ -35,6 +38,7 @@ function MyApp ({ Component, pageProps }) {
 			</Head>
 			<UI.Spinner show={loading}/>
 			<Component {...pageProps} />
+
 		</>
 	)
 }

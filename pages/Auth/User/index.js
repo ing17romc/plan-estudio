@@ -1,18 +1,14 @@
 
-import Layaout from 'components/Layaout'
-import Menu from 'components/Menu'
-import { MENU_OPTIONS } from '../constants'
+import User from 'components/Auth/User'
 import {
 	AuthAction,
 	withAuthUser,
 	withAuthUserTokenSSR
 } from 'next-firebase-auth'
 
-const index = () => {
-	return <Layaout>
-		<Menu options={MENU_OPTIONS} />
-	</Layaout>
-}
+const index = () => (
+	<User />
+)
 
 export const getServerSideProps = withAuthUserTokenSSR({
 	whenUnauthed: AuthAction.REDIRECT_TO_LOGIN

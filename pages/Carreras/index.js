@@ -4,6 +4,11 @@ import GenericList from 'components/GenericList'
 import { TABLE_HEADERS } from '../../constants'
 import { CONTENT } from 'content'
 import { CONFIG } from 'config'
+import {
+	AuthAction,
+	withAuthUser,
+	withAuthUserTokenSSR
+} from 'next-firebase-auth'
 
 const { TITLE } = CONTENT.CARRERAS
 const { CARRERAS: API } = CONFIG.API
@@ -19,7 +24,9 @@ const index = ({ data }) => (
 	</Layaout>
 )
 
-export async function getServerSideProps () {
+export const getServerSideProps = withAuthUserTokenSSR({
+	whenUnauthed: AuthAction.REDIRECT_TO_LOGIN
+})(async () => {
 	try {
 		const response = await fetch(API)
 		const responseJSON = await response.json()
@@ -29,6 +36,8 @@ export async function getServerSideProps () {
 		console.log(error)
 		return { props: { data: [] } }
 	}
-}
+})
 
-export default index
+export default withAuthUser({
+	whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN
+})(index)
