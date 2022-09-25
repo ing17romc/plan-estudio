@@ -25,7 +25,8 @@ const TYPE_PAGE = {
 function Auth ({ type }) {
 	const [state, setstate] = useState({
 		email: '',
-		password: ''
+		password: '',
+		message: ''
 	})
 
 	const onInputChange = e => {
@@ -55,6 +56,10 @@ function Auth ({ type }) {
 					// ..
 
 					console.log(errorCode, errorMessage)
+					setstate({
+						...state,
+						message: errorMessage
+					})
 				})
 		} else if (type === TYPE_PAGE.LOGIN) {
 			firebase.auth().signInWithEmailAndPassword(state.email, state.password)
@@ -69,6 +74,10 @@ function Auth ({ type }) {
 					const errorMessage = error.message
 					// ..
 					console.log(errorCode, errorMessage)
+					setstate({
+						...state,
+						message: errorMessage
+					})
 				})
 		}
 	}
@@ -117,6 +126,16 @@ function Auth ({ type }) {
 		}
 	}
 
+	const getMessage = () => {
+		return state.message !== ''
+			? <div className='start-1 size-12'>
+				<div className="message message-danger">
+					<strong>Warning!</strong> {state.message}
+				</div>
+			</div>
+			: <></>
+	}
+
 	return (
 		<div className="main-container bg-white">
 			<div className="center padding-v-100">
@@ -160,7 +179,10 @@ function Auth ({ type }) {
 									type='primary'
 								/>
 							</div>
+
 						</div>
+						<div className='start-1 size-12 padding-v-20'/>
+						{getMessage()}
 					</div>
 
 				</form>
