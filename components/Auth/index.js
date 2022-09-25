@@ -12,7 +12,9 @@ const { EMAIL, PASSWORD, RESET_PASSWORD, LOGIN, REGISTER } = context
 const style = {
 	width: '50%',
 	border: '1px solid black',
-	textAlign: 'left'
+	textAlign: 'left',
+	boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)',
+	borderRadius: '6px'
 }
 const { getValueInput } = functions
 
@@ -34,13 +36,18 @@ function Auth ({ type }) {
 		if (e) {
 			setstate({
 				...state,
-				[object.key]: object.value
+				[object.key]: object.value.trim()
 			})
 		}
 	}
 
 	const handleSubmit = e => {
 		e.preventDefault()
+		setstate({
+			...state,
+			email: state.email.trim(),
+			password: state.password.trim()
+		})
 		// alert('Form submitted ')
 		if (type === TYPE_PAGE.REGISTER) {
 			firebase.auth().createUserWithEmailAndPassword(state.email, state.password)
