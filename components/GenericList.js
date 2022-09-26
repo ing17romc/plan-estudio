@@ -27,9 +27,9 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 					<Title label={title} />
 				</div>
 
-				<div className="start-1  padding-v-20" />
-				<div className="grid-secondary bg-light-gray ">
-					<div className="start-1 size-10 padding-v-20">
+				<div className="start-1  padding-v-30" />
+				<div className="grid-secondary bg-light-gray elevated">
+					<div className="start-1 size-10 padding-v-30">
 						<h3> Listado... </h3>
 					</div>
 
@@ -44,7 +44,7 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 					</div>
 
 					<div className="start-1 size-20 padding-v-20 ">
-						<div className="bg-white padding-h-30 padding-v-30">
+						<div className="bg-white padding-h-30 ">
 							<table>
 								<tbody>
 									<tr>
