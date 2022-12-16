@@ -1,14 +1,26 @@
 
-import NavBar from './NavBar'
+import { UI } from 'edt-lib'
+import { useRouter } from 'next/router'
 import { LEFT_OPTIONS, RIGHT_OPTIONS } from '../constants'
 import { CONFIG } from 'config'
 import {
 	useAuthUser
 } from 'next-firebase-auth'
 const { USUARIOS } = CONFIG.ROUTER
+const { EXIT_APP } = CONFIG.ROUTER
 
 const Layaout = ({ children }) => {
+	const router = useRouter()
 	const AuthUser = useAuthUser()
+
+	const event = (path) => {
+		console.log(path === EXIT_APP, path, EXIT_APP)
+		if (path === EXIT_APP) {
+			AuthUser.signOut()
+		} else {
+			router.push(path)
+		}
+	}
 
 	const getRightOptions = () => {
 		if (AuthUser.email) {
@@ -18,13 +30,14 @@ const Layaout = ({ children }) => {
 		return RIGHT_OPTIONS
 	}
 
-	return <div className='main-container bg-white'>
-		<NavBar
-			leftOptions={LEFT_OPTIONS}
-			rightOptions={getRightOptions()}
-		/>
+	return <UI.Layaout
+		leftOptions={LEFT_OPTIONS}
+		rightOptions={getRightOptions()}
+		currentPath={router.asPath}
+		getCurrentPath={(path) => event(path)}
+		footer={<p>footer</p>}>
 		{children}
-	</div>
+	</UI.Layaout>
 }
 
 export default Layaout

@@ -24,7 +24,7 @@ const NavBar = ({ leftOptions, rightOptions }) => {
 		<UI.NavBar
 			leftOptions={leftOptions}
 			rightOptions={rightOptions}
-			correntPath={router.asPath}
+			currentPath={router.asPath}
 			getCurrentPath={(path) => event(path)}
 		/>
 	)
