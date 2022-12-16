@@ -44,7 +44,7 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 					</div>
 
 					<div className="start-1 size-20 padding-v-20 ">
-						<div className="bg-white padding-h-30 ">
+						<div className=" ">
 							<table>
 								<tbody>
 									<tr>

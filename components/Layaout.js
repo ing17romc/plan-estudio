@@ -35,7 +35,7 @@ const Layaout = ({ children }) => {
 		rightOptions={getRightOptions()}
 		currentPath={router.asPath}
 		getCurrentPath={(path) => event(path)}
-		footer={<p>footer</p>}>
+		footer={<p>PLAN ESTUDIO</p>}>
 		{children}
 	</UI.Layaout>
 }
