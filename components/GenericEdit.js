@@ -86,7 +86,7 @@ const GenericEdit = ({
 						<Title label={title} />
 					</div>
 
-					<div className='start-1 size-8 padding-v-20'>
+					<div className='start-1 size-6 padding-v-20'>
 						<TextBox
 							id='nombre'
 							value={state.nombre}
@@ -95,7 +95,7 @@ const GenericEdit = ({
 						/>
 					</div>
 
-					<div className='size-4 padding-v-20'>
+					<div className='size-6 padding-v-20'>
 						<Selector
 							id='estado'
 							value={state.estado}
@@ -105,7 +105,7 @@ const GenericEdit = ({
 						/>
 					</div>
 
-					<div className='start-9 size-2 padding-v-20'>
+					<div className='start-1 size-3 padding-v-20'>
 						<Button
 							title='Regresar'
 							type='secondary'
@@ -113,9 +113,9 @@ const GenericEdit = ({
 						/>
 					</div>
 
-					<div className='size-2 padding-v-20'>
+					<div className='size-3 padding-v-20'>
 						<Button
-							title='Continuar'
+							title='Guardar'
 							type='primary'
 							disabled={!state.nombre}
 						/>

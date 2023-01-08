@@ -44,11 +44,11 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 					</div>
 
 					<div className="start-1 size-24 padding-v-20 ">
-						<div className=" ">
-							<table>
+						<div>
+							<table className=" big-table">
 								<tbody>
 									<tr>
-										<th style={{ width: '20%' }}>{tableHeaders[0]}</th>
+										<th style={{ width: '10%' }}>{tableHeaders[0]}</th>
 										<th style={{ width: '60%' }}>{tableHeaders[1]}</th>
 										<th style={{ width: '10%' }}>{tableHeaders[2]}</th>
 										{
@@ -56,14 +56,14 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 											<th style={{ width: '10%' }} key={i}>{element}</th>
 										)) */
 										}
-										<th style={{ width: '5%' }}></th>
-										<th style={{ width: '5%' }}></th>
+										<th style={{ width: '10%' }}></th>
+										<th style={{ width: '10%' }}></th>
 									</tr>
 									{dt.map((element, i) => (
 										<tr key={i}>
-											<td>{element.id}</td>
-											<td>{element.nombre}</td>
-											<td>
+											<td style={{ width: '10%' }}>{element.id}</td>
+											<td style={{ width: '60%' }}>{element.nombre}</td>
+											<td style={{ width: '10%' }}>
 												<div
 													className={
 														!element.estado
@@ -74,7 +74,7 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 													{getStatus(element.estado)}
 												</div>
 											</td>
-											<td>
+											<td style={{ width: '10%' }}>
 												{' '}
 												<ImageButton
 													id="mode_edit"
@@ -84,7 +84,7 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 													onClick={() => router.push(`${title}/${element.id}`)}
 												/>{' '}
 											</td>
-											<td>
+											<td style={{ width: '10%' }}>
 												{' '}
 												<ImageButton
 													id="delete"
