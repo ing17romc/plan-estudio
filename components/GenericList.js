@@ -33,7 +33,7 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 						<h3> Listado... </h3>
 					</div>
 
-					<div className="start-20 size-1 padding-v-20">
+					<div className="start-24 size-1 padding-v-20">
 						<ImageButton
 							id="add"
 							icon="add"
@@ -43,16 +43,21 @@ const GenericList = ({ title, dt, tableHeaders, api }) => {
 						/>
 					</div>
 
-					<div className="start-1 size-20 padding-v-20 ">
+					<div className="start-1 size-24 padding-v-20 ">
 						<div className=" ">
 							<table>
 								<tbody>
 									<tr>
-										{tableHeaders.map((element, i) => (
-											<th key={i}>{element}</th>
-										))}
-										<th></th>
-										<th></th>
+										<th style={{ width: '20%' }}>{tableHeaders[0]}</th>
+										<th style={{ width: '60%' }}>{tableHeaders[1]}</th>
+										<th style={{ width: '10%' }}>{tableHeaders[2]}</th>
+										{
+										/* tableHeaders.map((element, i) => (
+											<th style={{ width: '10%' }} key={i}>{element}</th>
+										)) */
+										}
+										<th style={{ width: '5%' }}></th>
+										<th style={{ width: '5%' }}></th>
 									</tr>
 									{dt.map((element, i) => (
 										<tr key={i}>
