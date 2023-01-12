@@ -30,14 +30,14 @@ const Layaout = ({ children }) => {
 		return RIGHT_OPTIONS
 	}
 
-	return <UI.Layaout
+	return <UI.Layout
 		leftOptions={LEFT_OPTIONS}
 		rightOptions={getRightOptions()}
 		currentPath={router.asPath}
 		getCurrentPath={(path) => event(path)}
 		footer={<p>PLAN ESTUDIO</p>}>
 		{children}
-	</UI.Layaout>
+	</UI.Layout>
 }
 
 export default Layaout

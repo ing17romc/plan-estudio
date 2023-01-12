@@ -18,31 +18,31 @@ const index = () => {
 						<Title label="Datos" />
 					</div>
 
-					<div className='start-2 size-2 padding-v-20'>
+					<div className='start-1 size-3 padding-v-20'>
 						<h3>displayName</h3>
 					</div>
-					<div className='start-5 size-6 padding-v-20'>
+					<div className='size-6 padding-v-20'>
 						{AuthUser ? AuthUser.displayName : ''}
 					</div>
 
-					<div className='start-2 size-2 padding-v-20'>
+					<div className='start-1 size-3 padding-v-20'>
 						<h3>email</h3>
 					</div>
-					<div className='start-5 size-6 padding-v-20'>
+					<div className='size-6 padding-v-20'>
 						{AuthUser ? AuthUser.email : ''}
 					</div>
 
-					<div className='start-2 size-2 padding-v-20'>
+					<div className='start-1 size-3 padding-v-20'>
 						<h3>emailVerified</h3>
 					</div>
-					<div className='start-5 size-6 padding-v-20'>
+					<div className=' size-6 padding-v-20'>
 						{AuthUser ? AuthUser.emailVerified : ''}
 					</div>
 
-					<div className='start-2 size-2 padding-v-20'>
+					<div className='start-1 size-3 padding-v-20'>
 						<h3>phoneNumber</h3>
 					</div>
-					<div className='start-5 size-6 padding-v-20'>
+					<div className=' size-6 padding-v-20'>
 						{AuthUser ? AuthUser.phoneNumber : ''}
 					</div>
 
