@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const { USUARIOS } = CONFIG.ROUTER
 const { EMAIL, PASSWORD, RESET_PASSWORD, LOGIN, REGISTER } = context
 const style = {
-	width: '50%',
+	width: '80%',
 	border: '1px solid black',
 	textAlign: 'left',
 	boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.3)',
@@ -153,7 +153,7 @@ function Auth ({ type }) {
 						</div>
 
 						<div className='grid-secondary'>
-							<div className='start-1 size-20'>
+							<div className='start-1 size-24'>
 								<UI.TextBox
 									titleTop={ EMAIL.TITLE }
 									id='email'
@@ -162,7 +162,7 @@ function Auth ({ type }) {
 									placeholder={ EMAIL.PLACEHOLDER }
 								/>
 							</div>
-							<div className='start-1 size-20'>
+							<div className='start-1 size-24'>
 								<UI.TextBox
 									titleTop={ PASSWORD.TITLE }
 									id='password'
@@ -172,15 +172,15 @@ function Auth ({ type }) {
 									isPassword={true}
 								/>
 							</div>
-							<div className='start-1 size-20 '>
+							<div className='start-1 size-24'>
 								{RESET_PASSWORD.LABEL}&nbsp;
 								<Link href={USUARIOS.RESET_PASSWORD}>{RESET_PASSWORD.LINK}</Link>
 							</div>
-							<div className='start-1 size-20 padding-v-20'/>
-							<div className='start-1 size-13  center-vertical'>
+							<div className='start-1 size-24 padding-v-20'/>
+							<div className='start-1 size-11  center-vertical'>
 								{getLink(type)}
 							</div>
-							<div className='start-14 size-7 padding-v-30'>
+							<div className='size-12 padding-v-30'>
 								<UI.Button
 									title={getButton(type)}
 									type='primary'
