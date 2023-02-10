@@ -1,4 +1,4 @@
-import Layaout from 'components/Layaout'
+import Layout from 'components/Layout'
 import GenericEdit from 'components/GenericEdit'
 import { CONTENT } from 'content'
 import { CONFIG } from 'config'
@@ -14,9 +14,9 @@ const { SEMESTRES: PATH } = CONFIG.ROUTER
 
 const index = () => {
 	return (
-		<Layaout>
+		<Layout>
 			<GenericEdit pathRetun={PATH} title={TITLE_NEW} api={API} />
-		</Layaout>
+		</Layout>
 	)
 }
 

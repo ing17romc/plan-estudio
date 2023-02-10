@@ -1,5 +1,5 @@
 
-import Layaout from 'components/Layaout'
+import Layout from 'components/Layout'
 import { UI } from 'edt-lib'
 import {
 	useAuthUser
@@ -11,7 +11,7 @@ const index = () => {
 	const { Title } = UI
 
 	return (
-		<Layaout>
+		<Layout>
 			<div className='container-body'>
 				<div className='grid-primary '>
 					<div className='start-1 size-12 padding-v-40'>
@@ -48,7 +48,7 @@ const index = () => {
 
 				</div>
 			</div>
-		</Layaout>
+		</Layout>
 	)
 }
 

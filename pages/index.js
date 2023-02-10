@@ -1,5 +1,5 @@
 
-import Layaout from 'components/Layaout'
+import Layout from 'components/Layout'
 import Menu from 'components/Menu'
 import { MENU_OPTIONS } from '../constants'
 import {
@@ -9,9 +9,9 @@ import {
 } from 'next-firebase-auth'
 
 const index = () => {
-	return <Layaout>
+	return <Layout>
 		<Menu options={MENU_OPTIONS} />
-	</Layaout>
+	</Layout>
 }
 
 export const getServerSideProps = withAuthUserTokenSSR({

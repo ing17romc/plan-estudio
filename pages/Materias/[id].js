@@ -1,4 +1,4 @@
-import Layaout from 'components/Layaout'
+import Layout from 'components/Layout'
 import GenericEdit from 'components/GenericEdit'
 import { CONTENT } from 'content'
 import { CONFIG } from 'config'
@@ -17,7 +17,7 @@ const edit = ({ id = 0, nombre = '', estado = 1, error }) => {
 	if (error && error.statusCode) { return <Error statusCode={error.statusCode} title={error.statusText} /> }
 
 	return (
-		<Layaout>
+		<Layout>
 			<GenericEdit
 				id={id}
 				nombre={nombre}
@@ -26,7 +26,7 @@ const edit = ({ id = 0, nombre = '', estado = 1, error }) => {
 				api={API}
 				title={TITLE_EDIT}
 			/>
-		</Layaout>
+		</Layout>
 	)
 }
 

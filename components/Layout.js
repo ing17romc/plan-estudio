@@ -1,7 +1,7 @@
 
 import { UI } from 'edt-lib'
 import { useRouter } from 'next/router'
-import { LEFT_OPTIONS, RIGHT_OPTIONS } from '../constants'
+import { LEFT_OPTIONS, RIGHT_OPTIONS, MENU_OPTIONS } from '../constants'
 import { CONFIG } from 'config'
 import {
 	useAuthUser
@@ -9,7 +9,7 @@ import {
 const { USUARIOS } = CONFIG.ROUTER
 const { EXIT_APP } = CONFIG.ROUTER
 
-const Layaout = ({ children }) => {
+const Layout = ({ children }) => {
 	const router = useRouter()
 	const AuthUser = useAuthUser()
 
@@ -30,14 +30,14 @@ const Layaout = ({ children }) => {
 		return RIGHT_OPTIONS
 	}
 
-	return <UI.Layout
+	return <UI.LayoutV2
 		leftOptions={LEFT_OPTIONS}
+		sideOptions={MENU_OPTIONS}
 		rightOptions={getRightOptions()}
-		currentPath={router.asPath}
 		getCurrentPath={(path) => event(path)}
-		footer={<p>PLAN ESTUDIO</p>}>
+	>
 		{children}
-	</UI.Layout>
+	</UI.LayoutV2>
 }
 
-export default Layaout
+export default Layout

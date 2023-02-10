@@ -36,7 +36,8 @@ function Auth ({ type }) {
 		if (e) {
 			setstate({
 				...state,
-				[object.key]: object.value.trim()
+				[object.key]: object.value.trim(),
+				message: ''
 			})
 		}
 	}

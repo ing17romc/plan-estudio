@@ -1,5 +1,5 @@
 
-import Layaout from 'components/Layaout'
+import Layout from 'components/Layout'
 import GenericList from 'components/GenericList'
 import { TABLE_HEADERS } from '../../constants'
 import { CONTENT } from 'content'
@@ -14,14 +14,14 @@ const { TITLE } = CONTENT.SEMESTRES
 const { SEMESTRES: API } = CONFIG.API
 
 const index = ({ data }) => (
-	<Layaout>
+	<Layout>
 		<GenericList
 			title={TITLE}
 			dt={data}
 			tableHeaders={TABLE_HEADERS}
 			api={API}
 		></GenericList>
-	</Layaout>
+	</Layout>
 )
 
 export const getServerSideProps = withAuthUserTokenSSR({
